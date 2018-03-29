@@ -14,13 +14,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('concat', function() {
-    return gulp.src('./src/assets/stylesheet/css/*.css')
+    return gulp.src('./src/assets/stylesheet/css/**/*.css')
         .pipe(concat('all.css'))
-        .pipe(gulp.dest('./src/assets/stylesheet/css/'));
+        .pipe(gulp.dest('./src/assets/stylesheet/build/'));
 });
 
 gulp.task('minify-css',['concat'], function() {
-    return gulp.src('./src/assets/stylesheet/css/all.css')
+    return gulp.src('./src/assets/stylesheet/build/all.css')
       .pipe(minifyCSS({
          keepBreaks: true,
       }))
@@ -28,9 +28,10 @@ gulp.task('minify-css',['concat'], function() {
         path.basename += ".min";
         path.extname = ".css";
       }))
-      .pipe(gulp.dest('./src/assets/stylesheet/css/'));
+      .pipe(gulp.dest('./src/assets/stylesheet/build/'));
 });
 
 gulp.task('default', ['sass', 'minify-css'], function () {
     gulp.watch('./src/assets/stylesheet/scss/**/*.scss', ['sass']);
+    gulp.watch('./src/assets/stylesheet/css/**/*.css', ['minify-css']);
 });
