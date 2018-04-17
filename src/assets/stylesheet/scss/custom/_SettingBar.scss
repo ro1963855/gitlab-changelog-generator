@@ -1,0 +1,5 @@
+.custom-settingbar {
+    height: calc(100vh - #{$custom-navbar-height});
+    margin-right: -15px;
+    margin-left: -15px;
+}

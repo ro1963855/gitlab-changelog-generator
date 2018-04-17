@@ -1,5 +1,5 @@
-<template id="app">
-    <b-navbar toggleable="md" type="dark" variant="dark">
+<template>
+    <b-navbar toggleable="md" type="dark" variant="dark" class="custom-navbar-height">
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-navbar-brand href="#">
             Gitlab Changelog Generator

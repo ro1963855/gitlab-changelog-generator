@@ -1,0 +1,28 @@
+{
+    "gitlab": {
+        "protocol": "http",
+        "host": "192.x.x.x",
+        "port": "8080",
+        "api": {
+            "version": "v4",
+            "Private-Token": ""
+        }
+    },
+    "default": {
+        "project": {
+            "selected": 0
+        },
+        "changelog": {
+            "labelTitle": [
+                {
+                    "label": "Feature",
+                    "indicate": "New feature"
+                },
+                {
+                    "label": "BugFix",
+                    "indicate": "Fixed bugs"
+                }
+            ]
+        }
+    }
+}
