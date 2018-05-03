@@ -128,7 +128,7 @@ export default {
         .then((response) => {
           that.project.helper = new ProjectHelper(response.data);
           that.project.options = that.project.helper.getAllProjectOptions();
-          that.project.selected = this.getSelectOptionByValue(that.project.options, 'id', Config.default.project.selected);
+          that.project.selected = this.getSelectOptionByValue(that.project.options, 'name', Config.default.project.selected);
           this.getProjectCompareOption();
         });
     },
@@ -170,7 +170,7 @@ export default {
       const source = _.defaultTo(this.compare.sourceSelected.id, this.compare.sourceSelected.name);
       const target = _.defaultTo(this.compare.targetSelected.id, this.compare.targetSelected.name);
       this.gitLabApiHelper
-        .compareCommits(this.project.selected.id, source, target)
+        .compareCommits(this.project.selected.id, target, source)
         .then((response) => {
           const project = that.project.helper.getProjectById(that.project.selected.id);
           that.generatorHelper.buildCommitsList(project, { source, target }, response.data);

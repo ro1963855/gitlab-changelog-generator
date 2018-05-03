@@ -54,7 +54,7 @@ export default class LogGenerator {
         const gitlabConfig = this._config.gitlab;
         const source = this._compareSourceAndTarget.source;
         const target = this._compareSourceAndTarget.target;
-        const url = `${gitlabConfig.protocol}://${gitlabConfig.host}:${gitlabConfig.port}/${this._project.pathWithNamespace}/compare/${source}...${target}`;
+        const url = `${gitlabConfig.protocol}://${gitlabConfig.host}:${gitlabConfig.port}/${this._project.pathWithNamespace}/compare/${target}...${source}`;
         return url;
     }
     /**
