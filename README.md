@@ -5,17 +5,15 @@ Generate gitlab release changlog
 
 ## Output example
 
-> ## [Release v1.2.0](https://github.com/ro1963855/gitlab-changelog-generator) (2018-04-17)
-> [Full Changelog](http://172.20.1.212:8888/root/iDesign/compare/6326553e10385d2c277f481eb327d2e45d3d140f...0796744fb9594f14e8692143800facc148c6ed94)
->
+> ## [Release v1.3.0](http://172.20.1.212:8888/root/iDesign/merge_requests/24) (2018-05-03)
+> [Full Changelog](http://172.20.1.212:8888/root/iDesign/compare/8321554fe6a514f3973a4ea71384272359878aeb...64cca9babea9fbd963373a9cc96b0281507db098)
+> 
 > **New feature**
-> - Sync Git and Svn files lost between move [#1](http://172.20.1.212:8888/root/iDesign/issues/1) ([root](http://172.20.1.212:8888/root))
->
+> - Adjust column position of Resource page and change counting method [#17](http://172.20.1.212:8888/root/iDesign/issues/17) ([Dandy.Chen](http://172.20.1.212:8888/Dandy.Chen))
+> 
 > **Fixed bugs**
-> - fix default sort will not work when change page [#7](http://172.20.1.212:8888/root/iDesign/issues/7) ([Dandy.Chen](http://172.20.1.212:8888/Dandy.Chen))
-> - fix inherit PCB Part No page get default value from PLM logic error [#6](http://172.20.1.212:8888/root/iDesign/issues/6) ([Dandy.Chen](http://172.20.1.212:8888/Dandy.Chen))
-> - Fix DocumentFrameView not working caused by CAE_Gridview library modification [#5](http://172.20.1.212:8888/root/iDesign/issues/5) ([Ji.Li](http://172.20.1.212:8888/Ji.Li))
-> - Fix Request's step after step3, but handlform is not exist bug [#4](http://172.20.1.212:8888/root/iDesign/issues/4) ([Dandy.Chen](http://172.20.1.212:8888/Dandy.Chen))
+> - Fix RMA Shipping_Month [#18](http://172.20.1.212:8888/root/iDesign/issues/18) ([Josh.Lin](http://172.20.1.212:8888/Josh.Lin))
+> - Fix user not receive email problem [#13](http://172.20.1.212:8888/root/iDesign/issues/13) ([Dandy.Chen](http://172.20.1.212:8888/Dandy.Chen))
 
 ## Usage
 *  download project from git
@@ -35,13 +33,13 @@ Example :
     },
     "default": {
         "project": {
-            "selected": 9
+            "selected": "Administrator / iDesign"       # Gitlab's group / project
         },
         "changelog": {
             "labelTitle": [
                 {
-                    "label": "Feature",
-                    "indicate": "New feature"
+                    "label": "Feature",                 # gitlab issue label
+                    "indicate": "New feature"           # markdown show name
                 },
                 {
                     "label": "BugFix",
